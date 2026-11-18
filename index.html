@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ім’я Прізвище — психолог</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+:root{
+  --bg:#EDF2F3; --ink:#1E2B34; --muted:#52646F; --teal:#2E6B6F; --on-teal:#fff;
+  --mist:#D5E3E4; --lav:#E4E1F0; --line:#C3D2D5;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"Manrope",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#131C21; --ink:#E6EEF0; --muted:#A5B6BD; --teal:#7FC1C4; --on-teal:#0F1A1E;
+    --mist:#1D2B31; --lav:#232338; --line:#2E4048; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#131C21; --ink:#E6EEF0; --muted:#A5B6BD; --teal:#7FC1C4; --on-teal:#0F1A1E;
+  --mist:#1D2B31; --lav:#232338; --line:#2E4048; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--sans)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;margin:0}
+p{margin:0 0 1em;max-width:62ch}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.brand{font:600 20px var(--serif)}
+.btn{font:700 16px var(--sans);background:var(--teal);color:var(--on-teal);border:0;border-radius:999px;padding:14px 28px;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+a.btn{display:inline-block;text-decoration:none}
+.btn.small{padding:10px 20px;font-size:15px}
+
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;padding:56px 0 88px}
+.hero h1{font-size:clamp(36px,6vw,62px);letter-spacing:-.01em;margin-bottom:24px}
+.hero p.lead{font-size:20px;color:var(--muted);margin-bottom:32px}
+.breath{position:relative;aspect-ratio:1;max-width:380px;width:100%;margin:0 auto;display:grid;place-items:center}
+.breath i{position:absolute;border-radius:50%;inset:0;background:var(--mist);animation:breathe 10s ease-in-out infinite}
+.breath i:nth-child(2){inset:14%;background:var(--lav);animation-delay:.4s}
+.breath i:nth-child(3){inset:30%;background:var(--teal);opacity:.9;animation-delay:.8s}
+.breath span{position:relative;font:italic 400 20px var(--serif);color:var(--on-teal)}
+@keyframes breathe{0%,100%{transform:scale(.88)}50%{transform:scale(1)}}
+.breath u{position:absolute;inset:30%;border:2px solid var(--teal);border-radius:50%;opacity:0;animation:ring 5s ease-out infinite}
+.breath u:nth-of-type(2){animation-delay:2.5s}
+@keyframes ring{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.7);opacity:0}}
+.breath b{position:absolute;border-radius:50%;background:var(--teal);opacity:.3;animation:pulse 4s ease-in-out infinite}
+.d1{width:22px;height:22px;top:4%;left:18%}
+.d2{width:14px;height:14px;top:12%;right:8%;animation-delay:1s!important}
+.d3{width:28px;height:28px;bottom:6%;left:8%;animation-delay:2s!important}
+.d4{width:16px;height:16px;bottom:14%;right:12%;animation-delay:.5s!important}
+.d5{width:10px;height:10px;top:46%;left:0;animation-delay:1.5s!important}
+@keyframes pulse{0%,100%{transform:scale(.6);opacity:.2}50%{transform:scale(1.3);opacity:.7}}
+.hero .btn{animation:glow 2.6s ease-out infinite}
+@keyframes glow{0%{box-shadow:0 0 0 0 var(--teal)}70%,100%{box-shadow:0 0 0 16px transparent}}
+@media (prefers-reduced-motion:reduce){.breath i,.breath u,.breath b,.hero .btn{animation:none!important}}
+
+section{padding:72px 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(28px,4vw,40px);margin-bottom:32px}
+.topics{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px;list-style:none;margin:0;padding:0}
+.topics li{padding:18px 0;border-bottom:1px solid var(--line)}
+.topics b{display:block;font:600 21px var(--serif);margin-bottom:4px}
+.topics span{color:var(--muted);font-size:16px}
+
+.quotes{background:var(--lav);border:0;padding:80px 0}
+blockquote{margin:0 0 44px;max-width:30em}
+blockquote:last-child{margin-bottom:0}
+blockquote p{font:italic 400 clamp(22px,3vw,30px)/1.4 var(--serif);margin-bottom:10px}
+blockquote footer{font-size:15px;color:var(--muted);padding:0}
+.own p{font:400 clamp(20px,2.6vw,26px)/1.5 var(--serif)}
+
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:28px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:48px 1fr;gap:16px}
+.steps li::before{content:counter(s);width:40px;height:40px;border-radius:50%;background:var(--teal);color:var(--on-teal);display:grid;place-items:center;font-weight:700}
+.steps b{font:600 21px var(--serif);display:block;margin-bottom:2px}
+.steps span{color:var(--muted)}
+
+.cta{text-align:center}
+.cta p{margin-inline:auto;color:var(--muted)}
+
+footer.site{background:var(--mist);padding:56px 0 40px;margin-top:40px}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+footer.site h3{font-size:19px;margin-bottom:10px}
+footer.site p{margin:0 0 6px;font-size:16px}
+.copy{margin-top:36px;color:var(--muted);font-size:14px}
+
+dialog{border:0;border-radius:20px;padding:32px;width:min(460px,calc(100% - 32px));background:var(--bg);color:var(--ink);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(10,20,25,.55)}
+dialog h2{font-size:28px;margin-bottom:8px}
+dialog .sub{color:var(--muted);font-size:15px;margin-bottom:20px}
+label{display:block;font-weight:700;font-size:14px;margin:14px 0 6px}
+input,textarea{width:100%;font:inherit;color:var(--ink);background:var(--mist);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+textarea{min-height:92px;resize:vertical}
+.row{display:flex;gap:12px;margin-top:22px;align-items:center}
+.link{background:none;border:0;color:var(--muted);font:inherit;cursor:pointer;text-decoration:underline}
+.done{display:none}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;padding-top:24px}
+  .breath{max-width:260px;order:-1}
+  .topics,.cols{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">Ім’я Прізвище</div>
+    <a class="btn small" href="https://docs.google.com/forms/d/e/1FAIpQLScJ0B2sSNiP5gnJbl8DZS2i_rIBAJOeSaF-kN1EAzzGnqCYIw/viewform?usp=publish-editor" target="_blank" rel="noopener">Записатися</a>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>Місце, де можна видихнути і розібратися</h1>
+      <p class="lead">Індивідуальні консультації психолога: спокійно, без осуду, у вашому темпі. Очно та онлайн.</p>
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScJ0B2sSNiP5gnJbl8DZS2i_rIBAJOeSaF-kN1EAzzGnqCYIw/viewform?usp=publish-editor" target="_blank" rel="noopener">Залишити заявку на консультацію</a>
+    </div>
+    <div class="breath" aria-hidden="true"><u></u><u></u><i></i><i></i><i></i><b class="d1"></b><b class="d2"></b><b class="d3"></b><b class="d4"></b><b class="d5"></b></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2>З чим я працюю</h2>
+    <ul class="topics">
+      <li><b>Тривога та стрес</b><span>Постійна напруга, панічні стани, складнощі зі сном.</span></li>
+      <li><b>Стосунки</b><span>Конфлікти, самотність, розрив, межі з близькими.</span></li>
+      <li><b>Вигорання та самооцінка</b><span>Втома, відчуття «я недостатньо добрий», пошук опори.</span></li>
+      <li><b>Кризи та втрати</b><span>Зміни в житті, переїзд, горе, період невизначеності.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="quotes">
+  <div class="wrap">
+    <blockquote>
+      <p>«Те, що найбільш особисте, є і найбільш загальним».</p>
+      <footer>Карл Роджерс</footer>
+    </blockquote>
+    <div class="own">
+      <p>Звернутися по допомогу — не слабкість, а турбота про себе. Ви не мусите справлятися з усім самостійно, і не потрібно чекати, поки стане «достатньо погано».</p>
+      <p>Змін не відбувається за одну зустріч. Але з першої розмови стає трохи легше — бо ви більше не наодинці зі своїми думками.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Як проходить консультація</h2>
+    <ol class="steps">
+      <li><div><b>Залишаєте заявку</b><span>Коротко опишіть запит. Я зв’яжуся з вами протягом доби.</span></div></li>
+      <li><div><b>Знайомство</b><span>Обговорюємо, з чим ви прийшли, і чи підходимо одне одному.</span></div></li>
+      <li><div><b>Регулярна робота</b><span>Зустрічі по 50 хвилин, зазвичай раз на тиждень, очно чи онлайн.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Готові зробити перший крок?</h2>
+    <p>Це нічого не коштує і ні до чого вас не зобов’язує.</p>
+    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScJ0B2sSNiP5gnJbl8DZS2i_rIBAJOeSaF-kN1EAzzGnqCYIw/viewform?usp=publish-editor" target="_blank" rel="noopener">Залишити заявку на консультацію</a>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div><h3>Адреса</h3><p>м. Київ, вул. Прикладна, 12, офіс 5</p><p>Також онлайн (Zoom, Google Meet)</p></div>
+      <div><h3>Контакти</h3><p>Тел.: <a href="tel:+380000000000">+380 00 000 00 00</a></p><p>Email: <a href="mailto:example@example.com">example@example.com</a></p><p>Telegram: @example</p></div>
+      <div><h3>Години роботи</h3><p>Пн–Пт: 10:00–19:00</p><p>Сб: 10:00–14:00</p><p>Нд: вихідний</p></div>
+    </div>
+    <p class="copy">© 2026 Ім’я Прізвище. Усі дані на цій сторінці — приклад.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>
